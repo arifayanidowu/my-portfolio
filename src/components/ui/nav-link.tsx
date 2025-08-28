@@ -60,7 +60,7 @@ export function NavLink({
         {isActive && (
           <motion.div
             layoutId="activeSection"
-            className="absolute inset-x-0 -bottom-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full"
+            className="absolute inset-x-0 -bottom-3 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full"
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             exit={{ opacity: 0, scaleX: 0 }}

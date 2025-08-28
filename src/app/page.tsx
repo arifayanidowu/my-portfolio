@@ -80,19 +80,23 @@ export default function Home() {
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=center",
       link: "https://shoe-game-commerce.vercel.app/",
       github: "https://github.com/arifayanidowu/shoe-game-commerce",
+      disableCode: false,
+      disableDemo: false,
     },
     {
       title: "Mobile App",
       description:
-        "Mobile HR management app for SeamlessHR, built with React Native and Typescript",
+        "Mobile HR management app for SeamlessHR, built with React Native and Typescript, available on PlayStore & AppStore",
       tech: ["React Native", "Typescript", "React Query"],
       image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=800&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center",
       link: "#",
       github: "#",
+      disableDemo: true,
+      disableCode: true,
     },
     {
       title: "Telehealth Platform",
@@ -100,9 +104,11 @@ export default function Home() {
         "A secure telemedicine platform enabling virtual doctor-patient consultations, built with Next.js and Tailwind CSS.",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop&crop=center",
       link: "https://germiny.org/",
       github: "#",
+      disableDemo: false,
+      disableCode: true,
     },
   ];
 
@@ -269,13 +275,20 @@ export default function Home() {
                 knowledge with the developer community.
               </p>
               <div className="flex space-x-4">
-                <Button variant="outline" size="sm">
-                  <Github className="mr-2 h-4 w-4" />
-                  GitHub
+                <Button variant="outline" size="sm" asChild>
+                  <a href="https://github.com/arifayanidowu" target="_blank">
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </a>
                 </Button>
-                <Button variant="outline" size="sm">
-                  <Linkedin className="mr-2 h-4 w-4" />
-                  LinkedIn
+                <Button variant="outline" size="sm" asChild>
+                  <a
+                    href="https://www.linkedin.com/in/olatubosun-arifayan/"
+                    target="_blank"
+                  >
+                    <Linkedin className="mr-2 h-4 w-4" />
+                    LinkedIn
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -448,11 +461,29 @@ export default function Home() {
                       className="object-cover"
                       priority={index === 0}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      onError={(e) => {
+                        // Fallback to placeholder if image fails to load
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = "none";
+                        const fallback =
+                          target.parentElement?.querySelector(
+                            ".image-fallback"
+                          );
+                        if (fallback) {
+                          (fallback as HTMLElement).style.display = "flex";
+                        }
+                      }}
                     />
+                    <div
+                      className="image-fallback absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center"
+                      style={{ display: "none" }}
+                    >
+                      <Code className="h-16 w-16 text-blue-600" />
+                    </div>
                   </div>
                   <CardHeader>
                     <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription className="text-gray-600">
+                    <CardDescription className="text-gray-600 dark:text-gray-400">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
@@ -468,24 +499,50 @@ export default function Home() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex-1"
-                        asChild
+                        className={`flex-1 ${
+                          project.disableDemo
+                            ? "opacity-50 cursor-not-allowed bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                            : ""
+                        }`}
+                        disabled={project.disableDemo}
+                        asChild={!project.disableDemo}
                       >
-                        <a href={project.link} target="_blank">
-                          <ExternalLink className="mr-2 h-4 w-4" />
-                          Live Demo
-                        </a>
+                        {project.disableDemo ? (
+                          <span className="flex items-center justify-center">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                            <span className="ml-2 text-xs">(Private)</span>
+                          </span>
+                        ) : (
+                          <a href={project.link} target="_blank">
+                            <ExternalLink className="mr-2 h-4 w-4" />
+                            Live Demo
+                          </a>
+                        )}
                       </Button>
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex-1"
-                        asChild
+                        className={`flex-1 ${
+                          project.disableCode
+                            ? "opacity-50 cursor-not-allowed bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400"
+                            : ""
+                        }`}
+                        disabled={project.disableCode}
+                        asChild={!project.disableCode}
                       >
-                        <a href={project.github} target="_blank">
-                          <Github className="mr-2 h-4 w-4" />
-                          Code
-                        </a>
+                        {project.disableCode ? (
+                          <span className="flex items-center justify-center">
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                            <span className="ml-2 text-xs">(Private)</span>
+                          </span>
+                        ) : (
+                          <a href={project.github} target="_blank">
+                            <Github className="mr-2 h-4 w-4" />
+                            Code
+                          </a>
+                        )}
                       </Button>
                     </div>
                   </CardContent>

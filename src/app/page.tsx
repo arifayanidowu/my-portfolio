@@ -79,14 +79,14 @@ export default function Home() {
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       image: "/project1.jpg",
-      link: "#",
-      github: "#",
+      link: "https://shoe-game-commerce.vercel.app/",
+      github: "https://github.com/arifayanidowu/shoe-game-commerce",
     },
     {
-      title: "Task Management App",
+      title: "Mobile App",
       description:
-        "Real-time task management application with collaborative features",
-      tech: ["React", "Socket.io", "Express", "PostgreSQL"],
+        "Mobile HR management app for SeamlessHR, built with React Native and Typescript",
+      tech: ["React Native", "Typescript", "React Query"],
       image: "/project2.jpg",
       link: "#",
       github: "#",
@@ -182,13 +182,21 @@ export default function Home() {
               innovative digital solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700"
+              >
+                <a href="/file/resume.pdf" download="Arifayan_Idowu_Resume.pdf">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download Resume
+                </a>
               </Button>
-              <Button size="lg" variant="outline">
-                <Mail className="mr-2 h-4 w-4" />
-                Get In Touch
+              <Button asChild size="lg" variant="outline">
+                <a href="mailto:arifayanidowu@gmail.com">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Get In Touch
+                </a>
               </Button>
             </div>
           </motion.div>
@@ -246,7 +254,7 @@ export default function Home() {
                 Passionate Developer with a Love for Innovation
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                I&apos;m a Full Stack Developer with over 8 years of experience
+                I&apos;m a Full Stack Developer with over 9 years of experience
                 building scalable web applications, and hybrid mobile
                 applications. I specialize in modern JavaScript frameworks, and
                 creating seamless user experiences.
@@ -446,13 +454,27 @@ export default function Home() {
                       ))}
                     </div>
                     <div className="flex space-x-2">
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        Live Demo
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1"
+                        asChild
+                      >
+                        <a href={project.link} target="_blank">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1">
-                        <Github className="mr-2 h-4 w-4" />
-                        Code
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="flex-1"
+                        asChild
+                      >
+                        <a href={project.github} target="_blank">
+                          <Github className="mr-2 h-4 w-4" />
+                          Code
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -494,25 +516,42 @@ export default function Home() {
             className="space-y-6"
           >
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Mail className="mr-2 h-5 w-5" />
-                Send Message
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700"
+              >
+                <a href="mailto:arifayanidowu@gmail.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Send Message
+                </a>
               </Button>
-              <Button size="lg" variant="outline">
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
+              <Button asChild size="lg" variant="outline">
+                <a href="/file/resume.pdf" download="Arifayan_Idowu_Resume.pdf">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </a>
               </Button>
             </div>
 
             <div className="flex justify-center space-x-6 pt-8">
-              <Button variant="ghost" size="lg">
-                <Github className="h-6 w-6" />
+              <Button variant="ghost" size="lg" asChild>
+                <a href="https://github.com/arifayanidowu" target="_blank">
+                  <Github className="h-6 w-6" />
+                </a>
               </Button>
-              <Button variant="ghost" size="lg">
-                <Linkedin className="h-6 w-6" />
+              <Button variant="ghost" size="lg" asChild>
+                <a
+                  href="https://www.linkedin.com/in/olatubosun-arifayan/"
+                  target="_blank"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
               </Button>
-              <Button variant="ghost" size="lg">
-                <Mail className="h-6 w-6" />
+              <Button asChild variant="ghost" size="lg">
+                <a href="mailto:arifayanidowu@gmail.com">
+                  <Mail className="h-6 w-6" />
+                </a>
               </Button>
             </div>
           </motion.div>

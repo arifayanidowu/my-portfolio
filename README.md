@@ -41,23 +41,26 @@ src/
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd my-portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -74,33 +77,42 @@ npm start
 ## 📱 Customization
 
 ### Personal Information
+
 Update the following files with your information:
+
 - `src/app/layout.tsx` - Update metadata and title
 - `src/app/page.tsx` - Update personal details, skills, and projects
 - `src/app/sitemap.ts` - Update URLs
 - `src/app/manifest.ts` - Update PWA information
 
 ### Styling
+
 - Colors and themes can be customized in `src/app/globals.css`
 - Component styles are in `src/components/ui/`
 - Tailwind configuration can be extended in `tailwind.config.ts`
 
-### Images
-Place your images in the `public/` directory:
-- `profile.jpg` - Your profile picture
+### Images & Files
+
+Place your images and files in the `public/` directory:
+
+- `profile.webp` - Your profile picture
+- `file/resume.pdf` - Your resume for download
 - `project1.jpg`, `project2.jpg`, etc. - Project screenshots
 - `og-image.jpg` - Open Graph image for social sharing
 
 ## 🔧 Configuration
 
 ### Next.js Config
+
 The `next.config.ts` file includes:
+
 - Image optimization
 - Performance optimizations
 - Security headers
 - Package import optimization
 
 ### SEO Configuration
+
 - Complete Open Graph metadata
 - Twitter Card support
 - Structured data ready
@@ -119,21 +131,25 @@ The `next.config.ts` file includes:
 ## 🌐 Deployment
 
 ### Vercel (Recommended)
+
 1. Push your code to GitHub
 2. Connect your repository to Vercel
 3. Deploy automatically on push
 
 ### Netlify
+
 1. Build the project: `npm run build`
 2. Deploy the `out` directory
 3. Configure build settings
 
 ### Other Platforms
+
 The project is compatible with any Node.js hosting platform.
 
 ## 📈 Analytics & Monitoring
 
 Add your analytics tools:
+
 - Google Analytics
 - Vercel Analytics
 - Hotjar
@@ -160,9 +176,9 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 - **Portfolio**: [https://arifayanidowu.netlify.app/](https://arifayanidowu.netlify.app/)
-- **GitHub**: [Your GitHub]
-- **LinkedIn**: [Your LinkedIn]
-- **Email**: [Your Email]
+- **GitHub**: [arifayanidowu](https://github.com/arifayanidowu)
+- **LinkedIn**: [Arifayan Idowu](https://linkedin.com/in/arifayanidowu)
+- **Email**: [arifayanidowu@gmail.com](mailto:arifayanidowu@gmail.com)
 
 ---
 

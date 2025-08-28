@@ -37,6 +37,7 @@ import {
   X,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -78,7 +79,8 @@ export default function Home() {
       description:
         "Full-stack e-commerce solution with React, Node.js, and MongoDB",
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/project1.jpg",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center",
       link: "https://shoe-game-commerce.vercel.app/",
       github: "https://github.com/arifayanidowu/shoe-game-commerce",
     },
@@ -87,17 +89,19 @@ export default function Home() {
       description:
         "Mobile HR management app for SeamlessHR, built with React Native and Typescript",
       tech: ["React Native", "Typescript", "React Query"],
-      image: "/project2.jpg",
+      image:
+        "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=800&h=600&fit=crop&crop=center",
       link: "#",
       github: "#",
     },
     {
-      title: "Portfolio Website",
+      title: "Telehealth Platform",
       description:
-        "Modern portfolio website built with Next.js and Tailwind CSS",
+        "A secure telemedicine platform enabling virtual doctor-patient consultations, built with Next.js and Tailwind CSS.",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      image: "/project3.jpg",
-      link: "#",
+      image:
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=600&fit=crop&crop=center",
+      link: "https://germiny.org/",
       github: "#",
     },
   ];
@@ -436,8 +440,15 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <Card className="h-full hover:shadow-xl dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:-translate-y-2 pt-0 overflow-hidden">
-                  <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                    <Code className="h-16 w-16 text-blue-600" />
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
                   </div>
                   <CardHeader>
                     <CardTitle className="text-xl">{project.title}</CardTitle>

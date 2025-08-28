@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arifayanidowu.netlify.app"),
+  metadataBase: new URL("https://arifayanidowu.vercel.app"),
   title: "Arifayan Idowu - Full Stack Developer & Software Engineer",
   description:
     "Full Stack Developer and Software Engineer specializing in modern web technologies. Experienced in React, Node.js, and cloud solutions.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Arifayan Idowu - Full Stack Developer & Software Engineer",
     description:
       "Full Stack Developer and Software Engineer specializing in modern web technologies.",
-    url: "https://arifayanidowu.netlify.app/",
+    url: "https://arifayanidowu.vercel.app/",
     siteName: "Arifayan Idowu Portfolio",
     images: [
       {

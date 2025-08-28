@@ -175,7 +175,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Portfolio**: [https://arifayanidowu.netlify.app/](https://arifayanidowu.netlify.app/)
+- **Portfolio**: [https://arifayanidowu.vercel.app/](https://arifayanidowu.vercel.app/)
 - **GitHub**: [arifayanidowu](https://github.com/arifayanidowu)
 - **LinkedIn**: [Arifayan Idowu](https://linkedin.com/in/arifayanidowu)
 - **Email**: [arifayanidowu@gmail.com](mailto:arifayanidowu@gmail.com)
